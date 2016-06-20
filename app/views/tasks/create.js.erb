@@ -1,2 +1,2 @@
-$('#tasks').html("<%= j (render @tasks) %>");
+$('#tasks').append("<%= j (render partial: 'task' , locals: { task: @task }) %>");
 $('#task-form').slideUp(350);
