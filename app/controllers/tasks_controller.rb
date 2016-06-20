@@ -83,11 +83,13 @@ class TasksController < ApplicationController
   # DELETE /tasks/1.json
   def destroy
     @task = Task.find(params[:id])
+    @id = @task.id
     @task.destroy
 
     respond_to do |format|
       format.html { redirect_to tasks_url }
       format.json { head :no_content }
+      format.js
     end
   end
 
