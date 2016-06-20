@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
+  before_filter :allTasks
   def index
     @tasks = Task.all
 
@@ -29,6 +30,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @task }
+      format.js
     end
   end
 
@@ -46,6 +48,7 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render json: @task, status: :created, location: @task }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -79,5 +82,10 @@ class TasksController < ApplicationController
       format.html { redirect_to tasks_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def allTasks
+    @tasks = Task.all
   end
 end
