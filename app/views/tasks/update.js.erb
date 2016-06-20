@@ -1,0 +1,4 @@
+$('tr#' + "<%= @task.id %>").find("td").eq(0).html("<%= @task.title %>");
+$('tr#' + "<%= @task.id %>").find("td").eq(1).html("<%= @task.description %>");
+
+$('#task-form').slideUp(350);
