@@ -20,10 +20,10 @@ $(document).ready(function(){
 	$("body").append("<button id='DynamicBtn'>Click Dynamic Button</button>");
 	
 	//Prevent form submission
-	$("#task-form").on('submit' , 'form' , function(event){
-		alert( "Handler for .submit() called." );
-  		return false;
-	});
+	// $("#task-form").on('submit' , 'form' , function(event){
+	// 	alert( "Handler for .submit() called." );
+ //  		return false;
+	// });
 
 
 });
