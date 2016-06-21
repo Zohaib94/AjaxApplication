@@ -9,12 +9,17 @@ $(document).ready(function(){
   		async: false
 		});
 	});
-
-	//To bind event with a dynamic HTML Element
-	$("body").append("<button id='DynamicBtn'>Click Dynamic Button</button>");
+	
 	$(document).on("click" , "#DynamicBtn" , function(){
 		alert("Dynamic Button has been clicked");
 	});
+
+	$("#DynamicBtn").click(function(){ alert("ABCD");});
+
+	//To bind event with a dynamic HTML Element
+	$("body").append("<button id='DynamicBtn'>Click Dynamic Button</button>");
+	
+
 
 
 });
