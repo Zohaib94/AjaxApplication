@@ -9,7 +9,7 @@ $(document).ready(function(){
   		async: false
 		});
 	});
-	
+
 	$(document).on("click" , "#DynamicBtn" , function(){
 		alert("Dynamic Button has been clicked");
 	});
@@ -19,7 +19,11 @@ $(document).ready(function(){
 	//To bind event with a dynamic HTML Element
 	$("body").append("<button id='DynamicBtn'>Click Dynamic Button</button>");
 	
-
+	//Prevent form submission
+	$("#task-form").on('submit' , 'form' , function(event){
+		alert( "Handler for .submit() called." );
+  		return false;
+	});
 
 
 });
